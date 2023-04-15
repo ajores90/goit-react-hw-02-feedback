@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { StyledSection, StyledList, StyledListItem } from './Statistics.styled';
 
 class Statistics extends React.Component {
   render() {
@@ -7,15 +8,17 @@ class Statistics extends React.Component {
       this.props;
 
     return (
-      <section>
-        <ul>
-          <li>Good: {good}</li>
-          <li>Neutral: {neutral}</li>
-          <li>Bad: {bad}</li>
-          <li>Total: {totalFeedback}</li>
-          <li>Positive feedback: {positivePercentage.toFixed(1)}%</li>
-        </ul>
-      </section>
+      <StyledSection>
+        <StyledList>
+          <StyledListItem>Good: {good}</StyledListItem>
+          <StyledListItem>Neutral: {neutral}</StyledListItem>
+          <StyledListItem>Bad: {bad}</StyledListItem>
+          <StyledListItem>Total: {totalFeedback}</StyledListItem>
+          <StyledListItem>
+            Positive feedback: {positivePercentage.toFixed(1)}%
+          </StyledListItem>
+        </StyledList>
+      </StyledSection>
     );
   }
 }
